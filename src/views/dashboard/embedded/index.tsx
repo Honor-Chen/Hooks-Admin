@@ -1,7 +1,7 @@
 import "./index.less";
 
 const Embedded = () => {
-	return <iframe src="https://cn.bing.com/" frameBorder="0" className="card full-iframe"></iframe>;
+	return <h1>可嵌入其他外部页面</h1>;
 };
 
 export default Embedded;

@@ -13,7 +13,6 @@ dist-ssr
 *.local
 stats.html
 
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -25,3 +24,4 @@ stats.html
 *.njsproj
 *.sln
 *.sw?
+deploy/*

@@ -45,5 +45,6 @@
 		"truetype",
 		"zhongyingwen",
 		"zhuti"
-	]
+	],
+	"commentTranslate.hover.enabled": true
 }

@@ -3,15 +3,17 @@ import { RouteObject } from "@/routers/interface";
 import Login from "@/views/login/index";
 
 // * 导入所有router
-const metaRouters = import.meta.globEager("./modules/*.tsx");
+const metaRouters = import.meta.glob("./modules/*.tsx", { eager: true });
 
 // * 处理路由
 export const routerArray: RouteObject[] = [];
-Object.keys(metaRouters).forEach(item => {
-	Object.keys(metaRouters[item]).forEach((key: any) => {
-		routerArray.push(...metaRouters[item][key]);
+
+for (const module of Object.values(metaRouters)) {
+	const moduleObj = module as { [key: string]: any };
+	Object.keys(moduleObj).forEach((key: string) => {
+		routerArray.push(...moduleObj[key]);
 	});
-});
+}
 
 export const rootRouter: RouteObject[] = [
 	{
@@ -35,7 +37,7 @@ export const rootRouter: RouteObject[] = [
 ];
 
 const Router = () => {
-	const routes = useRoutes(rootRouter);
+	const routes = useRoutes(rootRouter as any);
 	return routes;
 };
 

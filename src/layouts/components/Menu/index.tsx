@@ -99,7 +99,7 @@ const LayoutMenu = (props: any) => {
 
 	return (
 		<div className="menu">
-			<Spin spinning={loading} tip="Loading...">
+			<Spin spinning={loading}>
 				<Logo></Logo>
 				<Menu
 					theme="dark"
