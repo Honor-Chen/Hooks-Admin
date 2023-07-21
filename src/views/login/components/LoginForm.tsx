@@ -42,7 +42,7 @@ const LoginForm = (props: any) => {
 			form={form}
 			name="basic"
 			labelCol={{ span: 5 }}
-			initialValues={{ remember: true }}
+			initialValues={{ remember: true, username: "admin", password: "123456" }}
 			onFinish={onFinish}
 			onFinishFailed={onFinishFailed}
 			size="large"
