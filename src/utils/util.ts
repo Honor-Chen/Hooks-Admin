@@ -69,6 +69,7 @@ export const getOpenKeys = (path: string) => {
 		newStr += arr[i];
 		newArr.push(newStr);
 	}
+	console.log("newArr :>> ", newArr);
 	return newArr;
 };
 
@@ -196,4 +197,18 @@ export const deepCopy = <T>(obj: any): T => {
 export function randomNum(min: number, max: number): number {
 	let num = Math.floor(Math.random() * (min - max) + max);
 	return num;
+}
+
+/**
+ * @description 模拟接口调用
+ * @param {any}
+ * @return Promise<any>
+ */
+export function sleep(...args: any[]): Promise<any> {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			if (!args.length) reject("参数为空");
+			resolve(args);
+		}, 1000);
+	});
 }

@@ -27,6 +27,7 @@ const LayoutMenu = (props: any) => {
 
 	// 设置当前展开的 subMenu
 	const onOpenChange = (openKeys: string[]) => {
+		console.log("🌐 ~ file: index.tsx:30 ~ onOpenChange ~ openKeys:", openKeys);
 		if (openKeys.length === 0 || openKeys.length === 1) return setOpenKeys(openKeys);
 		const latestOpenKey = openKeys[openKeys.length - 1];
 		if (latestOpenKey.includes(openKeys[0])) return setOpenKeys(openKeys);
@@ -104,16 +105,18 @@ const LayoutMenu = (props: any) => {
 		<div className="menu">
 			<Spin spinning={loading}>
 				<Logo></Logo>
-				<Menu
-					theme="dark"
-					mode="inline"
-					triggerSubMenuAction="click"
-					openKeys={openKeys}
-					selectedKeys={selectedKeys}
-					items={menuList}
-					onClick={clickMenu}
-					onOpenChange={onOpenChange}
-				></Menu>
+				<div className="menu-container">
+					<Menu
+						theme="dark"
+						mode="inline"
+						triggerSubMenuAction="click"
+						openKeys={openKeys}
+						selectedKeys={selectedKeys}
+						items={menuList}
+						onClick={clickMenu}
+						onOpenChange={onOpenChange}
+					></Menu>
+				</div>
 			</Spin>
 		</div>
 	);

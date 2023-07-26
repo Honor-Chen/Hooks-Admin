@@ -14,6 +14,24 @@ const errorRouter: Array<RouteObject> = [
 		}
 	},
 	{
+		path: "/errorCmp",
+		element: lazyLoad(React.lazy(() => import("@/components/ErrorMessage/errorComponents"))),
+		meta: {
+			requiresAuth: false,
+			title: "组件|方法报错",
+			key: "error-components-fun"
+		}
+	},
+	{
+		path: "/error-boundary",
+		element: lazyLoad(React.lazy(() => import("@/components/ErrorMessage/ReactErrorBoundary"))),
+		meta: {
+			requiresAuth: false,
+			title: "错误捕获插件",
+			key: "react-error-boundary"
+		}
+	},
+	{
 		path: "/404",
 		element: lazyLoad(React.lazy(() => import("@/components/ErrorMessage/404"))),
 		meta: {

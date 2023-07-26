@@ -194,6 +194,16 @@
 				},
 				{
 					"icon": "AppstoreOutlined",
+					"path": "/errorCmp",
+					"title": "组件|方法报错"
+				},
+				{
+					"icon": "AppstoreOutlined",
+					"path": "/error-boundary",
+					"title": "错误捕获插件"
+				},
+				{
+					"icon": "AppstoreOutlined",
 					"path": "/403",
 					"title": "403页面"
 				},

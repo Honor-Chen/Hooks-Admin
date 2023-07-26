@@ -12,7 +12,7 @@ const proTableRouter: Array<RouteObject> = [
 		},
 		children: [
 			{
-				path: "/proTable/useHooks",
+				path: "/proTable/useHooks", // 没有适配动态路由
 				element: lazyLoad(React.lazy(() => import("@/views/proTable/useHooks/index"))),
 				meta: {
 					requiresAuth: true,
