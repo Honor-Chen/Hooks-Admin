@@ -1,6 +1,7 @@
 // @see: https://stylelint.io
 
 module.exports = {
+	customSyntax: "postcss-less",
 	extends: [
 		"stylelint-config-standard", // 配置stylelint拓展插件
 		"stylelint-config-prettier", // 配置stylelint和prettier兼容
