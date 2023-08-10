@@ -1,0 +1,70 @@
+diff --git a/dist/ag-grid-enterprise.cjs.js b/dist/ag-grid-enterprise.cjs.js
+index e70197b64dfb7a8edaa6dbaa2a5bc2965cc0a0b6..9392e33f918c5096c83c874d93196695fd732c8b 100644
+--- a/dist/ag-grid-enterprise.cjs.js
++++ b/dist/ag-grid-enterprise.cjs.js
+@@ -429,52 +429,16 @@ var LicenseManager = /** @class */ (function () {
+         }
+     };
+     LicenseManager.prototype.outputInvalidLicenseKey = function () {
+-        console.error('*****************************************************************************************************************');
+-        console.error('***************************************** AG Grid Enterprise License ********************************************');
+-        console.error('********************************************* Invalid License ***************************************************');
+-        console.error('* Your license for AG Grid Enterprise is not valid - please contact info@ag-grid.com to obtain a valid license. *');
+-        console.error('*****************************************************************************************************************');
+-        console.error('*****************************************************************************************************************');
+-        this.watermarkMessage = "Invalid License";
++        this.watermarkMessage = "";
+     };
+     LicenseManager.prototype.outputExpiredTrialKey = function (formattedExpiryDate) {
+-        console.error('****************************************************************************************************************');
+-        console.error('***************************************** AG Grid Enterprise License *******************************************');
+-        console.error('*****************************************   Trial Period Expired.    *******************************************');
+-        console.error("* Your license for AG Grid Enterprise expired on " + formattedExpiryDate + ".                                                *");
+-        console.error('* Please email info@ag-grid.com to purchase a license.                                                         *');
+-        console.error('****************************************************************************************************************');
+-        console.error('****************************************************************************************************************');
+-        this.watermarkMessage = "Trial Period Expired";
++        this.watermarkMessage = "";
+     };
+     LicenseManager.prototype.outputMissingLicenseKey = function () {
+-        console.error('****************************************************************************************************************');
+-        console.error('***************************************** AG Grid Enterprise License *******************************************');
+-        console.error('****************************************** License Key Not Found ***********************************************');
+-        console.error('* All AG Grid Enterprise features are unlocked.                                                                *');
+-        console.error('* This is an evaluation only version, it is not licensed for development projects intended for production.     *');
+-        console.error('* If you want to hide the watermark, please email info@ag-grid.com for a trial license.                        *');
+-        console.error('****************************************************************************************************************');
+-        console.error('****************************************************************************************************************');
+-        this.watermarkMessage = "For Trial Use Only";
++        this.watermarkMessage = "";
+     };
+     LicenseManager.prototype.outputIncompatibleVersion = function (formattedExpiryDate, formattedReleaseDate) {
+-        console.error('****************************************************************************************************************************');
+-        console.error('****************************************************************************************************************************');
+-        console.error('*                                             AG Grid Enterprise License                                                   *');
+-        console.error('*                           License not compatible with installed version of AG Grid Enterprise.                           *');
+-        console.error('*                                                                                                                          *');
+-        console.error("* Your AG Grid License entitles you to all versions of AG Grid that we release within the time covered by your license     *");
+-        console.error("* - typically we provide one year licenses which entitles you to all releases / updates of AG Grid within that year.       *");
+-        console.error("* Your license has an end (expiry) date which stops the license key working with versions of AG Grid released after the    *");
+-        console.error("* license end date. The license key that you have expires on " + formattedExpiryDate + ", however the version of AG Grid you    *");
+-        console.error("* are trying to use was released on " + formattedReleaseDate + ".                                                               *");
+-        console.error('*                                                                                                                          *');
+-        console.error('* Please contact info@ag-grid.com to renew your subscription to new versions and get a new license key to work with this   *');
+-        console.error('* version of AG Grid.                                                                                                      *');
+-        console.error('****************************************************************************************************************************');
+-        console.error('****************************************************************************************************************************');
+-        this.watermarkMessage = "License Expired";
++        this.watermarkMessage = "";
+     };
+     LicenseManager.RELEASE_INFORMATION = 'MTY5MDI5NDc3MDg0Mg==';
+     return LicenseManager;
+@@ -555,7 +519,7 @@ var __decorate$1 = (undefined && undefined.__decorate) || function (decorators,
+ var WatermarkComp = /** @class */ (function (_super) {
+     __extends$1(WatermarkComp, _super);
+     function WatermarkComp() {
+-        return _super.call(this, /* html*/ "<div class=\"ag-watermark\">\n                <div ref=\"eLicenseTextRef\" class=\"ag-watermark-text\"></div>\n            </div>") || this;
++        return _super.call(this, /* html*/ "<div>\n                <div></div>\n            </div>") || this;
+     }
+     WatermarkComp.prototype.postConstruct = function () {
+         var _this = this;

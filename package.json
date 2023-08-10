@@ -20,6 +20,9 @@
 	},
 	"dependencies": {
 		"@ant-design/icons": "5.1.4",
+		"ag-grid-community": "^30.0.6",
+		"ag-grid-enterprise": "^30.0.6",
+		"ag-grid-react": "^30.0.6",
 		"ahooks": "^3.7.8",
 		"antd": "^5.6.4",
 		"axios": "^0.27.2",
@@ -98,6 +101,11 @@
 	"config": {
 		"commitizen": {
 			"path": "node_modules/cz-git"
+		}
+	},
+	"pnpm": {
+		"patchedDependencies": {
+			"ag-grid-enterprise@30.0.6": "patches/ag-grid-enterprise@30.0.6.patch"
 		}
 	}
 }

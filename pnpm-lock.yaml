@@ -4,10 +4,24 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  ag-grid-enterprise@30.0.6:
+    hash: g5dyge4jnecl7xqelrn4oxv3bi
+    path: patches/ag-grid-enterprise@30.0.6.patch
+
 dependencies:
   '@ant-design/icons':
     specifier: 5.1.4
     version: 5.1.4(react-dom@18.2.0)(react@18.2.0)
+  ag-grid-community:
+    specifier: ^30.0.6
+    version: 30.0.6
+  ag-grid-enterprise:
+    specifier: ^30.0.6
+    version: 30.0.6(patch_hash=g5dyge4jnecl7xqelrn4oxv3bi)
+  ag-grid-react:
+    specifier: ^30.0.6
+    version: 30.0.6(ag-grid-community@30.0.6)(react-dom@18.2.0)(react@18.2.0)
   ahooks:
     specifier: ^3.7.8
     version: 3.7.8(react@18.2.0)
@@ -1510,6 +1524,28 @@ packages:
   /add-stream@1.0.0:
     resolution: {integrity: sha512-qQLMr+8o0WC4FZGQTcJiKBVC59JylcPSrTtk6usvmIDFUOCKegapy1VHQwRbFMOFyb/inzUVqHs+eMYKDM1YeQ==}
     dev: true
+
+  /ag-grid-community@30.0.6:
+    resolution: {integrity: sha512-aMTJNXFDC00QxMaI0/V6M0GTzAtsXUvuxuld97S1Kqb4LvFNsycZlQ3/IcHW7JangRQZxAcwmSpBQBV/lcWoEg==}
+    dev: false
+
+  /ag-grid-enterprise@30.0.6(patch_hash=g5dyge4jnecl7xqelrn4oxv3bi):
+    resolution: {integrity: sha512-IdHG1ES1yjgYqaXzyEdMPSr/ORgw7IoL+XJ/YsgdCKuhjm/YrQb47IcxL4OL6CQQzRq4TrXAaqarfHvljqAvbg==}
+    dev: false
+    patched: true
+
+  /ag-grid-react@30.0.6(ag-grid-community@30.0.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-fWvf4DIyMihbuhvVlhO6pewXyOirEDgM73Pv6s9V1Ay4xp61Y/kdv2JFmkIwCV0NSpA5CKUeu1JFa5vmA/HVMw==}
+    peerDependencies:
+      ag-grid-community: ~30.0.6
+      react: ^16.3.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.3.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      ag-grid-community: 30.0.6
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /aggregate-error@3.1.0:
     resolution: {integrity: sha512-4I7Td01quW/RpocfNayFdFVk1qSuoh0E7JrbRJ16nH01HhKFQ88INq9Sd+nd72zqRySlr9BmDA8xlEJ6vJMrYA==}

@@ -46,6 +46,15 @@ const assemblyRouter: Array<RouteObject> = [
 					title: "批量导入数据",
 					key: "selectIcon"
 				}
+			},
+			{
+				path: "/assembly/scrollBoard",
+				element: lazyLoad(React.lazy(() => import("@/views/assembly/scrollBoard/index"))),
+				meta: {
+					requiresAuth: true,
+					title: "表格轮播",
+					key: "selectIcon"
+				}
 			}
 		]
 	}

@@ -25,6 +25,11 @@
 					"icon": "AppstoreOutlined",
 					"path": "/proTable/useComponent",
 					"title": "使用 Component"
+				},
+				{
+					"icon": "AppstoreOutlined",
+					"path": "/proTable/agGrid",
+					"title": "使用 AG Grid"
 				}
 			]
 		},
@@ -128,6 +133,11 @@
 					"icon": "AppstoreOutlined",
 					"path": "/assembly/batchImport",
 					"title": "批量导入数据"
+				},
+				{
+					"icon": "AppstoreOutlined",
+					"path": "/assembly/scrollBoard",
+					"title": "表格轮播"
 				}
 			]
 		},

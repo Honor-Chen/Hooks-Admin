@@ -28,6 +28,15 @@ const proTableRouter: Array<RouteObject> = [
 					title: "使用 Component",
 					key: "useComponent"
 				}
+			},
+			{
+				path: "/proTable/agGrid",
+				element: lazyLoad(React.lazy(() => import("@/views/proTable/agGrid/index"))),
+				meta: {
+					requiresAuth: false,
+					title: "使用 AG Grid",
+					key: "agGrid"
+				}
 			}
 		]
 	}

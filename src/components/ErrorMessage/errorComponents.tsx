@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 import ErrorBoundary from "@/components/ErrorMessage/ErrorBoundary";
 import useThrowAsyncError from "./useThrowAsyncError";
@@ -25,7 +25,7 @@ const Cmp = () => {
 		</>
 	);
 };
-const Cmp1: FC<{ fallback: ReactNode }> = ({ fallback }) => {
+const Cmp1: FC<any> = ({ fallback }) => {
 	const [hasError, setHasError] = useState(false);
 
 	const onError = () => {

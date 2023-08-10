@@ -69,7 +69,6 @@ export const getOpenKeys = (path: string) => {
 		newStr += arr[i];
 		newArr.push(newStr);
 	}
-	console.log("newArr :>> ", newArr);
 	return newArr;
 };
 
