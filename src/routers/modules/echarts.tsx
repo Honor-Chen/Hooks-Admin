@@ -64,6 +64,15 @@ const formRouter: Array<RouteObject> = [
 					title: "嵌套环形图",
 					key: "nestedChart"
 				}
+			},
+			{
+				path: "/echarts/geo",
+				element: lazyLoad(React.lazy(() => import("@/views/echarts/GeoMapChart/index"))),
+				meta: {
+					requiresAuth: true,
+					title: "Geo地图",
+					key: "geo"
+				}
 			}
 		]
 	}

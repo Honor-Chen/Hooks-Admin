@@ -35,6 +35,7 @@ const LayoutTabs = (props: any) => {
 		if (tabsList.every((item: any) => item.path !== route.path)) {
 			newTabsList.push({ title: route.meta!.title, path: route.path });
 		}
+		// console.log("🌐 ~ file: index.tsx:35 ~ addTabs ~ newTabsList:", newTabsList);
 		setTabsList(newTabsList);
 		setActiveValue(pathname);
 	};

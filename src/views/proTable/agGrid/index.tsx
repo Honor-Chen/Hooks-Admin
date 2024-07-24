@@ -7,6 +7,7 @@ import "ag-grid-enterprise/dist/ag-grid-enterprise.cjs.js";
 import "ag-grid-enterprise/styles/ag-grid.css";
 import "ag-grid-enterprise/styles/ag-theme-alpine.css";
 
+import { AG_GRID_LOCALE_EN } from "./locale.en";
 import MyTooltip from "./MyTooltip";
 import "./index.less";
 
@@ -125,6 +126,7 @@ const agGrid = () => {
 			<div className="ag-theme-alpine" style={{ height: "100%" }}>
 				<AgGridReact
 					ref={gridRef}
+					localeText={AG_GRID_LOCALE_EN}
 					animateRows // sort 时是否有动画
 					enableRangeSelection // 是否开启范围选中
 					suppressRowClickSelection // 禁止点击 Row 时，复选框选中

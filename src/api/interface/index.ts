@@ -27,7 +27,7 @@ export interface ReqPage {
 export namespace Login {
 	export interface ReqLoginForm {
 		username: string;
-		password: string;
+		pwd: string;
 	}
 	export interface ResLogin {
 		access_token: string;

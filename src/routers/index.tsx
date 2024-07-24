@@ -15,6 +15,8 @@ for (const module of Object.values(metaRouters)) {
 	});
 }
 
+// console.log(routerArray);
+
 export const rootRouter: RouteObject[] = [
 	{
 		path: "/",
@@ -37,6 +39,7 @@ export const rootRouter: RouteObject[] = [
 ];
 
 const Router = () => {
+	// console.log(rootRouter);
 	const routes = useRoutes(rootRouter as any);
 	return routes;
 };
