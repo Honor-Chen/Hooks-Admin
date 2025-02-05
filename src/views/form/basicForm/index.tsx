@@ -1,5 +1,17 @@
-import { Button, Form, Input, Select, Space, message } from "antd";
+import { Button, Form, Input, Select, Space, message, DatePicker } from "antd"; // Upload
+import dayjs from "dayjs";
 import "./index.less";
+
+/* const normFile = (e: any) => {
+	console.log("🌐 ~ normFile ~ e:", e);
+	if (Array.isArray(e)) {
+		return e;
+	}
+	return e?.fileList;
+}; */
+
+const dateTimestamp = dayjs("2024-01-01").valueOf();
+type FieldType = { date?: string };
 
 const BasicForm = () => {
 	const { Option } = Select;
@@ -31,13 +43,14 @@ const BasicForm = () => {
 		form.setFieldsValue({
 			user: "mark",
 			note: "Hello world!",
-			gender: "male"
+			gender: "male",
+			date: "2024-11-04"
 		});
 	};
 
 	return (
 		<div className="card content-box">
-			<Form form={form} name="control-hooks" onFinish={onFinish} labelCol={{ span: 1 }}>
+			<Form form={form} name="control-hooks" onFinish={onFinish} labelCol={{ span: 1 }} initialValues={{ date: dateTimestamp }}>
 				<Form.Item name="user" label="User">
 					<Input placeholder="Please enter a user" />
 				</Form.Item>
@@ -51,6 +64,24 @@ const BasicForm = () => {
 						<Option value="other">other</Option>
 					</Select>
 				</Form.Item>
+				{/* 查看 DatePicker 组件的用法 */}
+				<Form.Item<FieldType>
+					label="Date"
+					name="date"
+					rules={[{ required: true }]}
+					getValueProps={value => {
+						console.log("🌐 ~ BasicForm ~ value:", value);
+						console.log(dayjs().isValid());
+						return { value: value && dayjs(Number(value)) };
+					}}
+					normalize={value => {
+						console.log("🌐 ~ BasicForm ~ value:", value);
+						return value && `${dayjs(value).valueOf()}`;
+					}}
+				>
+					<DatePicker />
+				</Form.Item>
+
 				<Form.Item wrapperCol={{ offset: 1 }}>
 					<Space>
 						<Button type="primary" htmlType="submit">
@@ -61,7 +92,7 @@ const BasicForm = () => {
 						</Button>
 						<Button type="link" htmlType="button" onClick={onFill}>
 							Fill form
-						</Button>{" "}
+						</Button>
 					</Space>
 				</Form.Item>
 			</Form>
@@ -70,3 +101,12 @@ const BasicForm = () => {
 };
 
 export default BasicForm;
+
+/* getValueFromEvent:: 设置如何将 event 的值转换成字段值 */
+/* <Form.Item label="Upload" valuePropName="fileList" getValueFromEvent={normFile}>
+	<Upload action="/upload.do" listType="picture-card">
+		<button style={{ border: 0, background: "none" }} type="button">
+			<div style={{ marginTop: 8 }}>Upload</div>
+		</button>
+	</Upload>
+</Form.Item> */
