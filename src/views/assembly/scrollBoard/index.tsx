@@ -3,13 +3,19 @@ import ScrollBoard from "@/components/ScrollBoard";
 import "./index.less";
 
 const ScrollBoardPage = () => {
+	const handleRowClick = (params: any) => {
+		console.log("🌐 ~ handleRowClick ~ params:", params);
+	};
+
 	return (
 		<div className="card content-box">
 			<ScrollBoard
+				onClick={handleRowClick}
 				config={{
 					waitTime: 3000,
-					// carousel: "page",
-					// header: ["<i style='color: red;'>column1</i>", "column2", "column3"],
+					carousel: "page",
+					align: ["left", "center", "right"],
+					header: ["<i style='color: red;'>column1</i>", "column2", "column3"],
 					rowNum: 5,
 					data: [
 						["行1列1行1列1行1列1行1列1行1列1", "行1列2", "行1列3"],

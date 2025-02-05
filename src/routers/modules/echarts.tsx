@@ -67,7 +67,7 @@ const formRouter: Array<RouteObject> = [
 			},
 			{
 				path: "/echarts/geo",
-				element: lazyLoad(React.lazy(() => import("@/views/echarts/GeoMapChart/index"))),
+				element: lazyLoad(React.lazy(() => import("@/views/echarts/GeoMapChart/Map3D"))),
 				meta: {
 					requiresAuth: true,
 					title: "Geo地图",

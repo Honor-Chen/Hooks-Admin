@@ -12,6 +12,15 @@ const dataScreenRouter: Array<RouteObject> = [
 			title: "数据大屏",
 			key: "dataScreen"
 		}
+	},
+	{
+		path: "/autofit/index",
+		element: lazyLoad(React.lazy(() => import("@/views/autofit/index"))),
+		meta: {
+			requiresAuth: false,
+			title: "数据大屏-AutoFit",
+			key: "autoFit"
+		}
 	}
 ];
 

@@ -12,6 +12,11 @@
 			"path": "/dataScreen/index"
 		},
 		{
+			"icon": "AreaChartOutlined",
+			"title": "数据大屏-AutoFit",
+			"path": "/autofit/index"
+		},
+		{
 			"icon": "TableOutlined",
 			"title": "超级表格",
 			"path": "/proTable",
@@ -143,6 +148,11 @@
 					"icon": "AppstoreOutlined",
 					"path": "/assembly/scrollBoard",
 					"title": "表格轮播"
+				},
+				{
+					"icon": "AppstoreOutlined",
+					"path": "/assembly/gsap",
+					"title": "GSAP动画"
 				}
 			]
 		},

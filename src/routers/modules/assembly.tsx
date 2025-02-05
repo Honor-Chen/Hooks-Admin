@@ -55,6 +55,15 @@ const assemblyRouter: Array<RouteObject> = [
 					title: "表格轮播",
 					key: "selectIcon"
 				}
+			},
+			{
+				path: "/assembly/gsap",
+				element: lazyLoad(React.lazy(() => import("@/views/assembly/Gsap/index"))),
+				meta: {
+					requiresAuth: true,
+					title: "GSAP动画",
+					key: "selectIcon"
+				}
 			}
 		]
 	}

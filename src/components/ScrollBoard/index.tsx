@@ -2,7 +2,7 @@ import { forwardRef, useEffect, useMemo, useRef, useState } from "react";
 import classnames from "classnames";
 import type classNames from "classnames";
 import { merge, cloneDeep } from "lodash";
-import { useInterval } from "ahooks";
+// import { useInterval } from "ahooks";
 
 import { co } from "@/utils/util";
 import useAutoResize from "@/hooks/useAutoResize";
@@ -83,7 +83,7 @@ const defaultConfig: IConfig = {
 	 */
 	columnWidth: [],
 	/**
-	 * @description Column align 列对齐方式
+	 * @description Column align 列对齐方式，每列的对齐方式，可选值：'left' | 'center' | 'right'
 	 * @type {Array<String>}
 	 * @default align = []
 	 * @example align = ['left', 'center', 'right']
@@ -172,18 +172,20 @@ interface IScrollBoardProps {
 	className: classNames.ArgumentArray;
 }
 const ScrollBoard = forwardRef<IScrollBoardProps, any>(function ScrollBoard(props, ref) {
+	console.log("🌐 ~ ScrollBoard ~ props:", props);
 	const { onClick, onMouseOver, config = {}, className, style } = props;
 
 	// *容器的宽高、DOM节点
 	const { width, height, domRef } = useAutoResize(ref);
 
-	useInterval(
+	// 测试 useInterval
+	/* useInterval(
 		() => {
 			console.log(new Date().toLocaleTimeString());
 		},
 		1000,
 		{ immediate: true }
-	);
+	); */
 
 	// *mergedConfig: xx | header: xx | rows: xxx | widths: xxx | heights: xxx | aligns: xxx
 	const [state, setState] = useState<any>({ mergedConfig: null, header: [], rows: [], widths: [], heights: [], aligns: [] });
@@ -396,9 +398,9 @@ const ScrollBoard = forwardRef<IScrollBoardProps, any>(function ScrollBoard(prop
 								<div
 									className="ceil"
 									key={`${ceil}-${ri}-${ci}`}
+									// align={aligns[ci]}
 									style={{ width: `${widths[ci]}px`, textAlign: aligns[ci] }}
 									dangerouslySetInnerHTML={{ __html: ceil }}
-									// align={aligns[ci]}
 									onClick={() => emitEvent(onClick, ci, row, ceil)}
 									onMouseEnter={() => handleHover({ enter: true, ci, row, ceil })}
 									onMouseLeave={() => handleHover({ enter: false })}
